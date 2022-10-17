@@ -1,0 +1,47 @@
+body {
+    background-image: url(farmers.png);
+    background-repeat: no-repeat;
+    height: 100%;
+    background-size: cover;
+}
+
+h1{
+    display:flex;
+    justify-content:center;
+    color: black;
+    text-transform: uppercase
+}
+
+h2{
+    display:flex;
+    justify-content:center;
+    color: black;
+    text-transform: uppercase
+}
+
+.signupform{
+    display:flex;
+    justify-content:center;
+}
+
+.signupform label{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+.signupform input{
+  margin: auto;
+  width: 150%;
+  border: 3px solid green;
+  padding: 10px;
+}
+
+.signupform button{
+  margin: auto;
+  width: 165%;
+  border: 3px solid green;
+  border-radius:15px;
+  padding: 10px;
+  background-color: #4CAF50;    
+}

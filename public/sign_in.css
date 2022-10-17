@@ -1,0 +1,53 @@
+body.signin-body{
+background-color: #e6f2ff;/*soft blue*/
+}
+.container.signin-container{
+margin-top:8%;
+
+
+/*container has its own height by fixing margin-top it will grab the contents down at the middle*/
+}
+.card.signin-card{
+padding:40px 0px 20px ;
+background-color: #f4f4f4;
+box-shadow:-2px -2px 5px rgba(0,0,0,0.5);
+box-shadow:  -2px -2px 5px rgba(0,0,0,0.5);/*2px= right and bottom,-2px=top and left (shadow is only applicable for sides at a time)*/
+/*2px 2px=(right&bottom)
+ 2px -2px=(right and top)
+ -2px 2px=left and bottom
+ -2px -2px=left and top*/
+/*additional 5px is to blur the shadow*/
+/*rgb=colors(red,green,blue), a= opacity */
+/*webkit= chrome
+moz= mozilla firefox*/
+
+
+ 
+}
+.img-fluid.signin-image{
+padding:0 2rem 2rem;
+margin:auto;
+display:block;
+
+}
+form.signin-form{
+max-width:350px;
+margin:auto;
+
+}
+
+h1.fantasy{
+
+margin:auto;
+display:block;
+position:center;
+outline-width: thick;
+font-family: sans;
+
+}
+p , a.create-new-account{
+font-size: 1.2rem;
+text-align: center;
+display: block;
+margin-top: 15px;
+}
