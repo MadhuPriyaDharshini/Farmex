@@ -1,11 +1,27 @@
 <!doctype html>
 <html>
-    <head>
-       <title></title>
-    </head>
-    <body>
-       <script>
-            
-       </script>
-    </body>
+
+<head>
+   <title></title>
+</head>
+
+<body>
+   <script>
+      
+      fetch("http://localhost:3000/api/userinfo", {
+         method: "POST",
+         headers: {
+            "Content-type": "application/json; charset=UTF-8",
+             Accept: "application/json",
+            "Access-Control-Allow-Origin": "*",
+         },
+         body: JSON.stringify({token : window.localStorage.getItem('token')}),
+      }).then(res => res.json()).then(data => 
+         console.log(data)
+      ).catch((error)=>{
+        console.log({status : "error"})
+      });
+   </script>
+</body>
+
 </html>

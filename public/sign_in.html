@@ -1,81 +1,95 @@
 <html lang="en">
-    <head>
-    <title>Sign in page</title>
-    <meta charset="utf-8">
-    <meta name ="viewport" content="width=device width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="bootstrap-5.2.2-dist/css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="bootstrap-5.2.2-dist/css/bootstrap.css">
-    <link rel="stylesheet" href ="sign_in.css">
-    </head>
-    <body class="signin-body">
-   
-<div class="container signin-container ">
-<div class="row">
-<div class="col"></div>
-<div class="col-sm-12 col-md-8">
-<div class="card signin-card">
- <div class="card-body">
- <h1 class="fantasy">Farmex</h1>
-    <img src="farmer_frd.jpeg" class="img-fluid signin-image">
- <form class="signin-form" id="loginform">
-               <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address or User name</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your Email Address or User Name" name = "Email">
-    <div id="emailHelp" class="form-text">We won't share your email anywhere</div>
+
+<head>
+  <title>Sign in page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="bootstrap-5.2.2-dist/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="bootstrap-5.2.2-dist/css/bootstrap.css">
+  <link rel="stylesheet" href="sign_in.css">
+</head>
+
+<body class="signin-body">
+
+  <div class="container signin-container ">
+    <div class="row">
+      <div class="col"></div>
+      <div class="col-sm-12 col-md-8">
+        <div class="card signin-card">
+          <div class="card-body">
+            <h1 class="fantasy">Farmex</h1>
+            <img src="farmer_frd.jpeg" class="img-fluid signin-image">
+            <form class="signin-form" id="loginform">
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address or User name</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                  placeholder="Enter your Email Address or User Name" name="Email">
+                <div id="emailHelp" class="form-text">We won't share your email anywhere</div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter your Password"
+                  name="password">
+              </div>
+              <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="submit">Sign In</button>
+
+              </div>
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Remember Me <a href="Help.html" target="_blank">Need
+                    help?</a></label>
+
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <p>Dont have account?<a href="signup.html" class="create-new-account">Create an account</a></p>
+      </div>
+      <div class="col">
+
+      </div>
+
+    </div>
   </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter your Password" name = "password">
-  </div>
- <div class="d-grid gap-2">
-  <button class="btn btn-primary" type="submit" >Sign In</button>
- 
-</div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Remember Me <a href="Help.html" target="_blank">Need help?</a></label>  
 
-  </div>  
- </form>
-</div>
-</div>
+  <script>
+    const form = document.getElementById("loginform");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const Email = document.getElementById("exampleInputEmail1").value;
+      const password = document.getElementById("exampleInputPassword1").value;
+      const payload = {
+        Email,
+        password,
+      };
+      console.log(payload);
+      fetch("http://localhost:3000/api/sign_in", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+          Accept: "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
+        body: JSON.stringify(payload),
+      }).then(res => res.json()).then(data => { console.log(data);
+           if(data.status == "ok"){
+             window.localStorage.setItem("token",data.AccessToken);
+             window.location.href = "./userinfo.html";
+           }
+        });
+    });
+  </script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="bootstrap-5.2.2-dist/js/bootstrap.js"></script>
 
-<p>Dont have account?<a href="signup.html" class ="create-new-account" >Create an account</a></p>
-</div>
-<div class="col">
-
-</div>
-
- </div>
-</div>
-   
-   <script>
-      const form = document.getElementById("loginform");
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const Email = document.getElementById("exampleInputEmail1").value;
-        const password = document.getElementById("exampleInputPassword1").value;
-        const payload= {
-          Email,
-          password,
-        };
-        console.log(payload);
-        fetch("http://localhost:3000/api/sign_in", {
-          method: "POST",
-          headers: {
-            "Content-type": "application/json; charset=UTF-8",
-            Accept: "application/json",
-            "Access-Control-Allow-Origin": "*",
-          },
-          body: JSON.stringify(payload),
-        }).then(res => res.json()).then(data => {console.log(data)});
-      });
-    </script>
-     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-     <script src="bootstrap-5.2.2-dist/js/bootstrap.js"></script>
-       
-    </body>
+</body>
 
 
 </html>
