@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 <!DOCTYPE html>
@@ -124,3 +125,98 @@
     </body>
 </HTML>
 ---->
+=======
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Farmex</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body action="/" method="post">
+    <h1>Farmex</h1>
+    <h2>A Farm Community</h2>
+    <br /><br />
+    <div class="signupform">
+      <form id="signupform">
+        <label>UserName:</label>
+        <br /><br />
+        <input
+          type="text"
+          name="username"
+          placeholder="username"
+          id="exampleInputUserName1"
+        />
+        <br /><br />
+        <label>FirstName:</label>
+        <br /><br />
+        <input
+          type="text"
+          name="firstname"
+          placeholder="FirstName"
+          id="exampleInputFirstName1"
+        />
+        <br /><br />
+        <label>LastName:</label>
+        <br /><br />
+        <input
+          type="text"
+          name="lastName"
+          placeholder="lastname"
+          id="exampleInputLastName1"
+        />
+        <br /><br />
+        <label>Email:</label>
+        <br /><br />
+        <input
+          type="text"
+          name="email"
+          placeholder="email"
+          id="exampleInputEmail1"
+        />
+        <br /><br />
+        <label>Password:</label>
+        <br /><br />
+        <input
+          type="password"
+          name="password"
+          placeholder="password"
+          id="exampleInputPassword1"
+        />
+        <br /><br />
+        <button type="submit">SUBMIT</button>
+        <p>Already have an account?<a href="sign_in.html">Sign in</a></p>
+      </form>
+    </div>
+    <script>
+      const form = document.getElementById("signupform");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const UserName = document.getElementById("exampleInputUserName1").value;
+        const FirstName = document.getElementById(
+          "exampleInputFirstName1"
+        ).value;
+        const LastName = document.getElementById("exampleInputLastName1").value;
+        const Email = document.getElementById("exampleInputEmail1").value;
+        const password = document.getElementById("exampleInputPassword1").value;
+        const payload = {
+          UserName,
+          FirstName,
+          LastName,
+          Email,
+          password,
+        };
+        console.log(payload);
+        fetch("http://localhost:3000/api/signup", {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+            Accept: "application/json",
+            "Access-Control-Allow-Origin": "*",
+          },
+          body: JSON.stringify(payload),
+        }).then(res => res.json()).then(data => console.log(data));
+      });
+    </script>
+  </body>
+</html>
+>>>>>>> 832fbd160e3cbc4df536d44dc37ec28872a5b3ad

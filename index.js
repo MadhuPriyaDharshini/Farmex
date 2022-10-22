@@ -4,7 +4,9 @@ const bodyParser = require('body-parser');
 
 const bcrypt = require('bcryptjs');
 
-//const cors = require('cors');
+const path = require('path');
+
+const cors = require('cors');
 
 const db = require('./db');
 
@@ -12,11 +14,15 @@ const app = express();
 
 const farmexRouter = require('./routes/farmexroute');
 
+app.set("views",path.join(__dirname,"views"));
+
+app.set("view engine" , "ejs")
+
 app.use(express.static("public"));
 
 app.use(bodyParser.urlencoded({extended:true}));
 
-//app.use(cors());
+app.use(cors());
 
 app.use(bodyParser.json());
 
