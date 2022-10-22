@@ -1,7 +1,6 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,10 +14,21 @@
     "body-parser": "^1.20.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
     "express": "^4.18.2",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^4.10.0",
     "mongoose": "^6.6.5",
-    "nodemon": "^2.0.20"
-  }
+    "nodemon": "^2.0.20",
+    "path": "^0.12.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LokeshDanapal/Farmex.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LokeshDanapal/Farmex/issues"
+  },
+  "homepage": "https://github.com/LokeshDanapal/Farmex#readme",
+  "description": ""
 }
