@@ -29,10 +29,10 @@ createUser = async function (req, res) {
       return res.send({ error: "User exists" });
     }
     await User.create(NewUser);
-    
-     jwt.sign({Email},JWT_SECRET,{expiresIn : '7 days'},(err,token)=>{
+     const username = NewUser.UserName;
+     jwt.sign({username},JWT_SECRET,{expiresIn : '7 days'},(err,token)=>{
         if(err) throw err;
-        res.json({token});
+        res.json({status : "ok" , AccessToken : token });
         alert("Token Created");
      })
   } catch (error) {
@@ -46,6 +46,7 @@ validateUser = async function (req, res) {
   
   const user = await User.findOne({ Email });
   console.log(user);
+  const username = user.UserName;
   if (!user) {
     alert("User not found please sign up");
     return res.json({error : "User not found please sign up"});
@@ -56,31 +57,34 @@ validateUser = async function (req, res) {
     return res.status(400).json({ msg: " Password incorrect" });
   }
 
- 
-  const payload = {
-    user: {
-      id: user.id,
-    },
-  };
-
   jwt.sign(
-    payload,
+    {username},
     JWT_SECRET,
     { expiresIn: "30 days" },
     (err, token) => {
       if (err) throw err;
-      res.json({ token });
+      res.json({status : "ok" , AccessToken : token });
     }
   );
 };
 
-UserInfo = async (req, res) => {
-  try {
-    const user = await User.findOne({ UserName }).select("-password");
-    res.status(200).json({ user });
-  } catch (error) {
-    res.status(500).json(error);
+userInfo = async (req, res) => {
+  const {token} =  req.body;
+  console.log(req.body);
+  try{
+    const user = jwt.verify(token,JWT_SECRET);
+    console.log(user);
+    const username = user.username;
+    console.log(username);
+    User.findOne({UserName : username}).then((data)=>{
+      console.log(data);
+      res.json({status:"ok",data:data})
+    }).catch((error)=>{
+      res.json({status : error , data : error});
+    });
+  }catch(error){
+   res.json({status : error , data : error});
   }
 };
 
-module.exports = { createUser, validateUser };
+module.exports = { createUser, validateUser , userInfo };
