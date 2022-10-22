@@ -49,24 +49,28 @@
  </div>
 </div>
    
-     <script>
-       const form  = document.getElementById('loginform');
-       form.addEventListener('submit',(e)=>{
-          e.preventDefault();
-          const payload = new FormData(form);
-          console.log([...payload]);
-          fetch('http://localhost:3000/api/sign_in',{
-             method:'POST',
-             headers: {
-                "Content-type": "application/json; charset=UTF-8",
-                 Accept:"application/json",
-                "Access-Control-Allow-Origin": "*"
-             },
-             body:payload,
-          })
-       })
-       
-     </script>
+   <script>
+      const form = document.getElementById("loginform");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const Email = document.getElementById("exampleInputEmail1").value;
+        const password = document.getElementById("exampleInputPassword1").value;
+        const payload= {
+          Email,
+          password,
+        };
+        console.log(payload);
+        fetch("http://localhost:3000/api/sign_in", {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+            Accept: "application/json",
+            "Access-Control-Allow-Origin": "*",
+          },
+          body: JSON.stringify(payload),
+        }).then(res => res.json()).then(data => {console.log(data)});
+      });
+    </script>
      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
      <script src="bootstrap-5.2.2-dist/js/bootstrap.js"></script>
