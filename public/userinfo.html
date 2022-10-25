@@ -3,9 +3,20 @@
 
 <head>
    <title></title>
+   <meta name="viewport" content="width=device width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="/public/bootstrap-5.2.2-dist/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="/public/bootstrap-5.2.2-dist/css/bootstrap.css">
+  <link rel ="stylesheet" href="/public/MDB5-STANDARD-UI-KIT-Free-5.0.0/css/mdb.min.css.map">
+  <link rel ="stylesheet" href="/public/MDB5-STANDARD-UI-KIT-Free-5.0.0/css/mdb.dark.min.css">
+  <link rel ="stylesheet" href="/public/MDB5-STANDARD-UI-KIT-Free-5.0.0/css/mdb.dark.rtl.min.css.map">
+  <link rel ="stylesheet" href="/public/MDB5-STANDARD-UI-KIT-Free-5.0.0/css/mdb.rtl.min.css">
+  <link rel ="stylesheet" href="/public/MDB5-STANDARD-UI-KIT-Free-5.0.0/css/mdb.rtl.min.css.map">
+  
 </head>
 
 <body>
+<h1 id="WelcomeUser"></h1>
+ 
    <script>
       
       fetch("http://localhost:3000/api/userinfo", {
@@ -16,12 +27,31 @@
             "Access-Control-Allow-Origin": "*",
          },
          body: JSON.stringify({token : window.localStorage.getItem('token')}),
-      }).then(res => res.json()).then(data => 
-         console.log(data)
-      ).catch((error)=>{
+      }).then(res => res.json()).then(data => {
+         console.log(data);
+         if(data.status == "ok"){
+          const NewData =data.data
+          UserData = NewData.UserName;
+          window.localStorage.setItem('data', UserData);
+
+         }
+        }).catch((error)=>{
         console.log({status : "error"})
       });
+       console.log("The User Name is: ");
+       console.log(window.localStorage.getItem('data'));
+       
+       document.getElementById("WelcomeUser").innerHTML = window.localStorage.getItem('data');
+       
    </script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="/public/bootstrap-5.2.2-dist/js/bootstrap.min.js">   </script>
+<script src ="/public/MDB5-STANDARD-UI-KIT-Free-5.0.0/js/mdb.min.js"  ></script>
+<script src ="/public/MDB5-STANDARD-UI-KIT-Free-5.0.0/js/mdb.min.js.map"></script>
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js"></script>
 </body>
 
 </html>
