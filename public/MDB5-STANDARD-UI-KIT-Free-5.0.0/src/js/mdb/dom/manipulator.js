@@ -94,10 +94,10 @@ const Manipulator = {
     }
   },
 
-  addClass(element, className) {
-    if (element.classList.contains(className)) return;
-    element.classList.add(className);
-  },
+  // addClass(element, className) {
+  //   if (element.classList.contains(className)) return;
+  //   element.classList.add(className);
+  // },
 
   addStyle(element, style) {
     Object.keys(style).forEach((property) => {

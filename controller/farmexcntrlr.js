@@ -72,11 +72,11 @@ userInfo = async (req, res) => {
   const {token} =  req.body;
   console.log(req.body);
   try{
-    const user = jwt.verify(token,JWT_SECRET);
+    const user =  jwt.verify(token,JWT_SECRET);
     console.log(user);
     const username = user.username;
     console.log(username);
-    User.findOne({UserName : username}).then((data)=>{
+    await User.findOne({UserName : username}).then((data)=>{
       console.log(data);
       res.json({status:"ok",data:data})
     }).catch((error)=>{

@@ -2,10 +2,6 @@ const express = require('express');
 
 const bodyParser = require('body-parser');
 
-const bcrypt = require('bcryptjs');
-
-const path = require('path');
-
 const cors = require('cors');
 
 const db = require('./db');
@@ -14,9 +10,7 @@ const app = express();
 
 const farmexRouter = require('./routes/farmexroute');
 
-app.set("views",path.join(__dirname,"views"));
-
-app.set("view engine" , "ejs")
+const questionroute = require('./routes/QueryRoute');
 
 app.use(express.static("public"));
 
@@ -34,6 +28,8 @@ app.get("/",function(req,res){
 });
 
 app.use('/api',farmexRouter);
+
+app.use('./api1',questionroute);
 
 app.listen(3000,function(){
     console.log("Server connected to the port 3000");

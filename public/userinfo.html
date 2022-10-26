@@ -2,88 +2,52 @@
 <html>
 
 <head>
-   <title></title>
-   <meta name="viewport" content="width=device width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="/public/bootstrap-5.2.2-dist/css/bootstrap-grid.min.css">
-  <link rel="stylesheet" href="/public/bootstrap-5.2.2-dist/css/bootstrap.css">
-  <link rel ="stylesheet" href="/public/MDB5-STANDARD-UI-KIT-Free-5.0.0/css/mdb.min.css.map">
-  <link rel ="stylesheet" href="/public/MDB5-STANDARD-UI-KIT-Free-5.0.0/css/mdb.dark.min.css">
-  <link rel ="stylesheet" href="/public/MDB5-STANDARD-UI-KIT-Free-5.0.0/css/mdb.dark.rtl.min.css.map">
-  <link rel ="stylesheet" href="/public/MDB5-STANDARD-UI-KIT-Free-5.0.0/css/mdb.rtl.min.css">
-  <link rel ="stylesheet" href="/public/MDB5-STANDARD-UI-KIT-Free-5.0.0/css/mdb.rtl.min.css.map">
-  
+  <title></title>
+
+
 </head>
 
 <body>
-<<<<<<< HEAD
-   <h1> Welcome </h1> <h1 id="H1tag"></h1>
-  
-   <form>
-     <!-- <button class="btn btn-primary" type="submit" id="postqueriesbutton" onclick=postqueriesbutton()>Post Your Queries</button>
+  <h1> Welcome </h1>
+  <h1 id="H1tag"></h1>
+
+  <form>
+    <!-- <button class="btn btn-primary" type="submit" id="postqueriesbutton" onclick=postqueriesbutton()>Post Your Queries</button>
      <button class="btn btn-primary" type="submit" id="viewqueriesbutton" onclick=viewqueriesbutton()>View Queries</button> -->
-     <a href="postquery.html" class="create-new-account">POST YOUR QUERIES</a>
-     <br><br>
-     <a href="viewquery.html" class="create-new-account">VIEW YOUR QUERIES</a>
-   </form>
-=======
-<h1 id="WelcomeUser"></h1>
- 
->>>>>>> 38a0e68f869538dcba3d7b846e4a37ac95abd1ae
-   <script>
-      // function postqueriesbutton() {
-      //   window.location.href = "youtube.com";
-      // }
-      // function viewqueriesbutton() {
-      //   window.location.href = "google.com";
-      // };
-      fetch("http://localhost:3000/api/userinfo", {
-         method: "POST",
-         headers: {
-            "Content-type": "application/json; charset=UTF-8",
-             Accept: "application/json",
-            "Access-Control-Allow-Origin": "*",
-         },
-         body: JSON.stringify({token : window.localStorage.getItem('token')}),
-      }).then(res => res.json()).then(data => {
-<<<<<<< HEAD
-        console.log(data);
-        if(data.status == "ok"){
-          const NewData = data.data
-          UserData = NewData.UserName;
-          window.localStorage.setItem('data', UserData);
-        }
-      }).catch((error)=>{
-        console.log({status : "error"})
-      });
-      console.log("The User Name is");
-      console.log(window.localStorage.getItem('data'));
-      document.getElementById("H1tag").innerHTML = window.localStorage.getItem('data') ;
-=======
-         console.log(data);
-         if(data.status == "ok"){
-          const NewData =data.data
-          UserData = NewData.UserName;
-          window.localStorage.setItem('data', UserData);
+    <a href="postquery.html" class="create-new-account">POST YOUR QUERIES</a>
+    <br><br>
+    <a href="viewquery.html" class="create-new-account">VIEW YOUR QUERIES</a>
+  </form>
+  <script>
+    // function postqueriesbutton() {
+    //   window.location.href = "youtube.com";
+    // }
+    // function viewqueriesbutton() {
+    //   window.location.href = "google.com";
+    // };
+    fetch("http://localhost:3000/api/userinfo", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+        Accept: "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+      body: JSON.stringify({ token: window.localStorage.getItem('token') }),
+    }).then(res => res.json()).then(data => {
+      console.log(data);
+      if (data.status == "ok") {
+        const NewData = data.data
+        UserData = NewData.UserName;
+        window.localStorage.setItem('data', UserData);
+      }
+    }).catch((error) => {
+      console.log({ status: "error" })
+    });
+    console.log("The User Name is");
+    console.log(window.localStorage.getItem('data'));
+    document.getElementById("H1tag").innerHTML = window.localStorage.getItem('data');
+  </script>
 
-         }
-        }).catch((error)=>{
-        console.log({status : "error"})
-      });
-       console.log("The User Name is: ");
-       console.log(window.localStorage.getItem('data'));
-       
-       document.getElementById("WelcomeUser").innerHTML = window.localStorage.getItem('data');
-       
->>>>>>> 38a0e68f869538dcba3d7b846e4a37ac95abd1ae
-   </script>
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="/public/bootstrap-5.2.2-dist/js/bootstrap.min.js">   </script>
-<script src ="/public/MDB5-STANDARD-UI-KIT-Free-5.0.0/js/mdb.min.js"  ></script>
-<script src ="/public/MDB5-STANDARD-UI-KIT-Free-5.0.0/js/mdb.min.js.map"></script>
-<script
-src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js"></script>
 </body>
 
 </html>
