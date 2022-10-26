@@ -6,8 +6,22 @@
 </head>
 
 <body>
+   <h1> Welcome </h1> <h1 id="H1tag"></h1>
+  
+   <form>
+     <!-- <button class="btn btn-primary" type="submit" id="postqueriesbutton" onclick=postqueriesbutton()>Post Your Queries</button>
+     <button class="btn btn-primary" type="submit" id="viewqueriesbutton" onclick=viewqueriesbutton()>View Queries</button> -->
+     <a href="postquery.html" class="create-new-account">POST YOUR QUERIES</a>
+     <br><br>
+     <a href="viewquery.html" class="create-new-account">VIEW YOUR QUERIES</a>
+   </form>
    <script>
-      
+      // function postqueriesbutton() {
+      //   window.location.href = "youtube.com";
+      // }
+      // function viewqueriesbutton() {
+      //   window.location.href = "google.com";
+      // };
       fetch("http://localhost:3000/api/userinfo", {
          method: "POST",
          headers: {
@@ -16,11 +30,19 @@
             "Access-Control-Allow-Origin": "*",
          },
          body: JSON.stringify({token : window.localStorage.getItem('token')}),
-      }).then(res => res.json()).then(data => 
-         console.log(data)
-      ).catch((error)=>{
+      }).then(res => res.json()).then(data => {
+        console.log(data);
+        if(data.status == "ok"){
+          const NewData = data.data
+          UserData = NewData.UserName;
+          window.localStorage.setItem('data', UserData);
+        }
+      }).catch((error)=>{
         console.log({status : "error"})
       });
+      console.log("The User Name is");
+      console.log(window.localStorage.getItem('data'));
+      document.getElementById("H1tag").innerHTML = window.localStorage.getItem('data') ;
    </script>
 </body>
 

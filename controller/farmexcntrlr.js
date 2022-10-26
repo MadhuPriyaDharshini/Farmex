@@ -26,7 +26,7 @@ createUser = async function (req, res) {
     const oldUser = await User.findOne({ Email });
     console.log(oldUser);
     if (oldUser) {
-      return res.send({ error: "User exists" });
+      return res.json({ error: "User exists" });
     }
     await User.create(NewUser);
      const username = NewUser.UserName;
