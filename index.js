@@ -29,7 +29,7 @@ app.get("/",function(req,res){
 
 app.use('/api',farmexRouter);
 
-app.use('./api1',questionroute);
+app.use('/api1',questionroute);
 
 app.listen(3000,function(){
     console.log("Server connected to the port 3000");

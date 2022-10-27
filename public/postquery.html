@@ -22,7 +22,7 @@
         <div class="card signin-card">
           <div class="card-body">
             <h1 class="fantasy">Post your Queries here</h1>
-            <form id="queryform">
+            <form id="queryform" enctype="multipart/form-data">
               <div class="form-outline mb-4">
                 <input type="text" id="form4Example1" class="form-control" name="subject" />
                 <label class="form-label" for="form4Example1">Subject</label>
@@ -31,11 +31,6 @@
                 <input type="text" id="form4Example2" class="form-control" name="question" />
                 <label class="form-label" for="form4Example2">Ask your Question here!</label>
               </div>
-
-              <!-- Email input -->
-
-
-              <!-- Message input -->
               <div class="form-outline mb-4">
                 <textarea class="form-control" id="form4Example3" rows="4" name="description"></textarea>
                 <label class="form-label" for="form4Example3">Question Description</label>
@@ -49,13 +44,13 @@
               </div>
 
               <div class="form-outline mb-4">
-                <form class="interior">
-                  <p class="note note-info"><strong>Note info:</strong> You can also upload the picture of your crops
-                    and plant diseases below
-                     <input type="file" id="file" placeholder="upload a file"  name="image">
-                  </p>
 
-                </form>
+                <p class="note note-info"><strong>Note info:</strong> You can also upload the picture of your crops
+                  and plant diseases below
+                  <input accept="image/*" type="file" id="file1" placeholder="upload a file" name="image">
+                </p>
+
+
 
 
               </div>
@@ -64,29 +59,7 @@
               <div class="form-outline mb-4">
 
 
-                <form class="md-form">
-                  <div class="file-field">
-                    <div class="mb-4">
 
-                      <div class="d-flex justify-content-center" id="ImageFile" name="Image">
-                        <div class="btn btn-mdb-color btn-rounded float-left">
-                          <span>Add photo
-
-                            <input type="file">
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </form>
-
-
-
-                <!-- Checkbox -->
-
-
-                <!-- Submit button -->
                 <button type="submit" class="btn btn-primary btn-block mb-4">Post</button>
               </div>
             </form>
@@ -94,36 +67,22 @@
           </div>
         </div>
       </div>
-      <div class="col">
+      <script>
+        const form = document.getElementById("queryform");
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
 
-      </div>
-        <script>
-    const form = document.getElementById("queryform");
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const subject = document.getElementById("form4Example1").value;
-      const question = document.getElementById("form4Example2").value;
-      const description = document.getElementById("form4Example3").value;
-      const image = document.getElementById("file").value;
-      const payload = {
-        subject,
-        question,
-        description,
-        image
-      };
-      console.log(payload);
-      fetch("http://localhost:3000/api1/postquery", {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-          Accept: "application/json",
-          "Access-Control-Allow-Origin": "*",
-        },
-        body: JSON.stringify(payload),
-      }).then(res => res.json()).then(data => { console.log(data);
+          const payload = new FormData(form);
+          console.log([...payload]);
+          fetch("http://localhost:3000/api1/postquery", {
+            method: "POST",
+            body: payload,
+          }).then(res => res.json()).then(data => {
+            console.log(data);
+          })
+          console.log((payload));
         });
-    });
-  </script>
+      </script>
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
