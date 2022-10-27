@@ -14,5 +14,5 @@ const questions = new Schema(
     }
 );
 
-module.exports = mongoose.model('questions',questions);
+module.exports = new mongoose.model('questions',questions);
 
