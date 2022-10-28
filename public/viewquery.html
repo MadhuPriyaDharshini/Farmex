@@ -5,5 +5,21 @@
   </head>
   <body>
      <h1>This is view queries page</h1>
+     <script>
+       fetch("http://localhost:3000/api1/viewquery")
+       .then(response => response.json())
+       .then(data => {
+         const Data1 = JSON.stringify(data);
+         console.log((data)); 
+         if(data){
+           window.localStorage.setItem('data1',Data1);
+         }
+        })
+        const data =  window.localStorage.getItem('data1');
+        const data1 = JSON.parse(data)
+        console.log(data1);
+        console.log(data1.result[0].image);
+        
+     </script>
   </body>
 </html>

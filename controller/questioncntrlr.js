@@ -40,12 +40,22 @@ PostQueries = async function (req, res) {
           }
         }
       );
-      console.log(subject);
-      console.log(question);
-      console.log(description);
-      console.log(image);
     }
   });
 };
 
-module.exports = { PostQueries };
+ViweQueries = (req,res)=>{
+  console.log("Inside ViewQueries");
+  User.find({},function(err,result){
+    if (err) {
+     console.log(err);
+     res.send({status : err});
+    }
+    else{
+      console.log(result)
+      res.send({result});
+    }
+  })
+}
+
+module.exports = { PostQueries , ViweQueries};
