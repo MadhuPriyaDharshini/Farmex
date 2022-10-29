@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const questions = new Schema(
     {
-        subject : {type : String},
+        username : {type : String},
         question : {type : String},
         description : {type : String},
         image : {

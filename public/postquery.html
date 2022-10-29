@@ -25,34 +25,30 @@
             <form id="queryform" enctype="multipart/form-data">
               <div class="form-outline mb-4">
                 <input type="text" id="form4Example1" class="form-control" name="subject" />
-                <label class="form-label" for="form4Example1">Subject</label>
+                <label class="form-label" for="form4Example1">UserName</label>
               </div>
               <div class="form-outline mb-4">
                 <input type="text" id="form4Example2" class="form-control" name="question" />
-                <label class="form-label" for="form4Example2">Ask your Question here!</label>
+                <label class="form-label" for="form4Example2">Post problems you have experienced !</label>
               </div>
               <div class="form-outline mb-4">
                 <textarea class="form-control" id="form4Example3" rows="4" name="description"></textarea>
-                <label class="form-label" for="form4Example3">Question Description</label>
+                <label class="form-label" for="form4Example3">Leave Some Probable Solutions</label>
               </div>
 
               <div class="form-check d-flex justify-content-center mb-4">
                 <input class="form-check-input me-2" type="checkbox" value="" id="form4Example4" checked />
                 <label class="form-check-label" for="form4Example4">
-                  Send me a copy of this message
+                  Allow others to view this file
                 </label>
               </div>
 
               <div class="form-outline mb-4">
 
                 <p class="note note-info"><strong>Note info:</strong> You can also upload the picture of your crops
-                  and plant diseases below
+                  and plant diseases,pests,weeds and stuffs below
                   <input accept="image/*" type="file" id="file1" placeholder="upload a file" name="image">
                 </p>
-
-
-
-
               </div>
 
 
@@ -81,6 +77,8 @@
           })
           console.log((payload));
         });
+        const UserName = window.localStorage.getItem('data');
+        document.getElementById('form4Example1').value = UserName;
       </script>
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -91,7 +89,7 @@
       <script src="bootstrap-5.2.2-dist/js/bootstrap.min.js">   </script>
       <script src="MDB5-STANDARD-UI-KIT-Free-5.0.0/js/mdb.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js"></script>
-    <div class="col"></div>
+      <div class="col"></div>
     </div>
   </div>
 </body>

@@ -276,8 +276,9 @@
       const DATA = window.localStorage.getItem('data1');
       const DATA1 = JSON.parse(DATA);
       console.log(DATA1);
+      const image1 = btoa(String.fromCharCode(...new Uint8Array(SingleData.image.data.data)))
       for (let j = 0; j < DATA1.length; j++) {
-        document.getElementById('UserName'+j).innerHTML = DATA1[j].subject;
+        document.getElementById('UserName'+j).innerHTML = DATA1[j].username;
         document.getElementById('Question'+j).innerHTML = DATA1[j].question;
         document.getElementById('Solution'+j).innerHTML = DATA1[j].description;
       }

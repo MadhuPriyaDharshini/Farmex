@@ -24,7 +24,7 @@ PostQueries = async function (req, res) {
     } else {
       await User.create(
         {
-          subject: req.body.subject,
+          username: req.body.username,
           question: req.body.question,
           description: req.body.description,
           image: {
