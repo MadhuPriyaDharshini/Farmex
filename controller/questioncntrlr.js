@@ -1,6 +1,7 @@
 const User = require("../models/queries");
 
 const multer = require("multer");
+const { Db } = require("mongodb");
 
 const Storage = multer.diskStorage({
   destination: "Uploads",
@@ -53,7 +54,7 @@ ViweQueries = (req,res)=>{
     }
     else{
       console.log(result)
-      res.send({result});
+      res.send(result);
     }
   })
 }

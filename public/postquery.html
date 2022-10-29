@@ -71,7 +71,6 @@
         const form = document.getElementById("queryform");
         form.addEventListener("submit", (e) => {
           e.preventDefault();
-
           const payload = new FormData(form);
           console.log([...payload]);
           fetch("http://localhost:3000/api1/postquery", {

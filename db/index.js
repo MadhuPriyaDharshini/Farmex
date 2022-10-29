@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 require("dotenv").config();
 
-mongoose.connect(process.env.DATABASE).catch((error)=>{console.log(error)});
+mongoose.connect(process.env.DATABASE,{ useNewUrlParser: true, useUnifiedTopology: true }).catch((error)=>{console.log(error)});
 
 mongoose.connection.once('open', () => {
     console.log('atlas started')
