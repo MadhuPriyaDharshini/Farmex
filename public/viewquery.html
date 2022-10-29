@@ -1,25 +1,352 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <title></title>
-  </head>
-  <body>
-     <h1>This is view queries page</h1>
-     <script>
-       fetch("http://localhost:3000/api1/viewquery")
-       .then(response => response.json())
-       .then(data => {
-         const Data1 = JSON.stringify(data);
-         console.log((data)); 
-         if(data){
-           window.localStorage.setItem('data1',Data1);
-         }
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="bootstrap-5.2.2-dist/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="bootstrap-5.2.2-dist/css/bootstrap.min.css" id="bootstrap-css">
+  <link rel="stylesheet" href="MDB5-STANDARD-UI-KIT-Free-5.0.0/css/mdb.min.css">
+  <link rel="stylesheet" href="feed.css">
+
+
+
+</head>
+
+<body>
+  <nav class="navbar navbar-light bg-white">
+    <a href="#" class="navbar-brand">FARMEX</a>
+    <form class="form-inline">
+      <div class="input-group">
+        <div id="google_translate_element"></div>
+
+        <!--<div class="input-group-append">
+                        <button class="btn btn-outline-primary" type="button" id="button-addon2">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>-->
+      </div>
+    </form>
+  </nav>
+
+
+  <div class="container-fluid gedf-wrapper">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card">
+          <div class="card-body">
+            <div class="h5" id="UserName">@</div>
+            <div class="h7 text-muted" id="FullName">Fullname : Miracles Lee Cross</div>
+
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <div class="h6 text-muted">Total Queries Posted</div>
+              <div class="h5" id="NumOfQueries">5.2342</div>
+            </li>
+            <li class="list-group-item">
+              <div class="h6 text-muted"></div>
+              <div class="h5"></div>
+            </li>
+            <li class="list-group-item">Designation</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6 gedf-main">
+
+        <!--- \\\\\\\Post-->
+        <div class="card gedf-card">
+          <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="posts-tab" data-toggle="tab" href="viewquery.html" role="tab"
+                  aria-controls="posts" aria-selected="true">
+                  Posted Queries</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="images-tab" data-toggle="tab" role="tab" aria-controls="images"
+                  aria-selected="false" href="#images">Feed</a>
+              </li>
+            </ul>
+          </div>
+          <div class="card-body">
+            <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
+                <div class="popup">
+                  <label class="sr-only" for="message"></label>
+                  <a href="postquery.html" class="popup-button">POST YOUR Suggestion</a>
+                  <br><br>
+                </div>
+
+              </div>
+              <!-- <div class="tab-pane fade" id="images" role="tabpanel" aria-labelledby="images-tab">
+                                    <div class="form-group">
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="customFile">
+                                            <label class="custom-file-label" for="customFile">Upload image</label>
+                                        </div>
+                                    </div>
+                                   
+                                </div>-->
+            </div>
+            <!--<div class="btn-toolbar justify-content-between">
+                                
+                                <div class="btn-group">
+                                    <button id="btnGroupDrop1" type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        <i class="fa fa-globe"></i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="btnGroupDrop1">
+                                        <a class="dropdown-item" href="#"><i class="fa fa-globe"></i> Public</a>
+                                        <a class="dropdown-item" href="#"><i class="fa fa-users"></i> Friends</a>
+                                        <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Just me</a>
+                                    </div>
+                                </div>
+                            </div>-->
+          </div>
+        </div>
+
+        <div class="card gedf-card">
+          <div class="card-header">
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="d-flex justify-content-between align-items-center">
+
+                <div class="ml-2">
+                  <div class="h5 m-0" id="UserName"></div>
+                  <div class="h7 text-muted" id="FullName">Miracles Lee Cross</div>
+
+                </div>
+              </div>
+              <!-- <div>
+                                    <div class="dropdown">
+                                        <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fa fa-ellipsis-h"></i>
+                                        </button>
+                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1">
+                                            <div class="h6 dropdown-header">Configuration</div>
+                                            <a class="dropdown-item" href="#">Save</a>
+                                            <a class="dropdown-item" href="#">Hide</a>
+                                            <a class="dropdown-item" href="#">Report</a>
+                                        </div>
+                                    </div>
+                                </div>-->
+            </div>
+
+          </div>
+          <div class="card-body">
+            <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o" id="Time"></i>10 min ago</div>
+            <a class="card-link" href="#">
+              <h5 class="card-title" id="Question">Lorem ipsum dolor sit amet, consectetur adip.</h5>
+            </a>
+
+            <p class="card-text" id="Solution">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo recusandae nulla rem eos ipsa praesentium
+              esse magnam nemo dolor
+              sequi fuga quia quaerat cum, obcaecati hic, molestias minima iste voluptates.
+            </p>
+             <img src = "" class="img-fluid rounded mb-3" alt="farmex.jpg" id="image1"/> 
+          </div>
+          <div class="card-footer">
+            <a href="#" class="card-link"><i class="fa fa-gittip"></i> Upvote</a>
+            <a href="#" class="card-link"><i class="fa fa-comment"></i> Downvote</a>
+            <a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Share</a>
+          </div>
+        </div>
+        <!-- Post /////-->
+
+
+        <!--- \\\\\\\Post-->
+        <!----<div class="card gedf-card">
+                        <div class="card-header">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="mr-2">
+                                        <img class="rounded-circle" width="45" src="https://picsum.photos/50/50" alt="">
+                                    </div>
+                                    <div class="ml-2">
+                                        <div class="h5 m-0">@LeeCross</div>
+                                        <div class="h7 text-muted">Miracles Lee Cross</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="dropdown">
+                                        <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fa fa-ellipsis-h"></i>
+                                        </button>
+                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1">
+                                            <div class="h6 dropdown-header">Configuration</div>
+                                            <a class="dropdown-item" href="#">Save</a>
+                                            <a class="dropdown-item" href="#">Hide</a>
+                                            <a class="dropdown-item" href="#">Report</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                        </div>
+                        <div class="card-body">
+                            <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i> 10 min ago</div>
+                            <a class="card-link" href="#">
+                                <h5 class="card-title"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit consectetur
+                                    deserunt illo esse distinctio.</h5>
+                            </a>
+    
+                            <p class="card-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam omnis nihil, aliquam est, voluptates officiis iure soluta
+                                alias vel odit, placeat reiciendis ut libero! Quas aliquid natus cumque quae repellendus. Lorem
+                                ipsum dolor sit amet consectetur adipisicing elit. Ipsa, excepturi. Doloremque, reprehenderit!
+                                Quos in maiores, soluta doloremque molestiae reiciendis libero expedita assumenda fuga quae.
+                                Consectetur id molestias itaque facere? Hic!
+                            </p>
+                            <div>
+                                <span class="badge badge-primary">JavaScript</span>
+                                <span class="badge badge-primary">Android</span>
+                                <span class="badge badge-primary">PHP</span>
+                                <span class="badge badge-primary">Node.js</span>
+                                <span class="badge badge-primary">Ruby</span>
+                                <span class="badge badge-primary">Paython</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="card-link"><i class="fa fa-gittip"></i> Like</a>
+                            <a href="#" class="card-link"><i class="fa fa-comment"></i> Comment</a>
+                            <a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Share</a>
+                        </div>
+                    </div>
+                    Post /////
+    
+    
+                    - \\\\\\\Post
+                    <div class="card gedf-card">
+                        <div class="card-header">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="mr-2">
+                                        <img class="rounded-circle" width="45" src="https://picsum.photos/50/50" alt="">
+                                    </div>
+                                    <div class="ml-2">
+                                        <div class="h5 m-0">@LeeCross</div>
+                                        <div class="h7 text-muted">Miracles Lee Cross</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="dropdown">
+                                        <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fa fa-ellipsis-h"></i>
+                                        </button>
+                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1">
+                                            <div class="h6 dropdown-header">Configuration</div>
+                                            <a class="dropdown-item" href="#">Save</a>
+                                            <a class="dropdown-item" href="#">Hide</a>
+                                            <a class="dropdown-item" href="#">Report</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                        </div>
+                        <div class="card-body">
+                            <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i> Hace 40 min</div>
+                            <a class="card-link" href="#">
+                                <h5 class="card-title">Totam non adipisci hic! Possimus ducimus amet, dolores illo ipsum quos
+                                    cum.</h5>
+                            </a>
+    
+                            <p class="card-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam sunt fugit reprehenderit consectetur exercitationem odio,
+                                quam nobis? Officiis, similique, harum voluptate, facilis voluptas pariatur dolorum tempora sapiente
+                                eius maxime quaerat.
+                                <a href="https://mega.nz/#!1J01nRIb!lMZ4B_DR2UWi9SRQK5TTzU1PmQpDtbZkMZjAIbv97hU" target="_blank">https://mega.nz/#!1J01nRIb!lMZ4B_DR2UWi9SRQK5TTzU1PmQpDtbZkMZjAIbv97hU</a>
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="card-link"><i class="fa fa-gittip"></i> Like</a>
+                            <a href="#" class="card-link"><i class="fa fa-comment"></i> Comment</a>
+                            <a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Share</a>
+                        </div>
+                    </div>
+                    Post /////
+    
+    
+    
+                </div>
+                <div class="col-md-3">
+                    <div class="card gedf-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                                card's content.</p>
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
+                        </div>
+                    </div>
+                    <div class="card gedf-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                                    card's content.</p>
+                                <a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Another link</a>
+                            </div>
+                        </div>
+                </div>-->
+      </div>
+    </div>
+
+    <script>
+      fetch("http://localhost:3000/api1/viewquery")
+        .then(response => response.json())
+        .then(data => {
+          const Data1 = JSON.stringify(data);
+          console.log((data));
+          if (data) {
+            window.localStorage.setItem('data1', Data1);
+          }
         })
-        const data =  window.localStorage.getItem('data1');
-        const data1 = JSON.parse(data)
-        console.log(data1);
-        console.log(data1.result[0].image);
-        
-     </script>
-  </body>
+      const data = window.localStorage.getItem('data1');
+      const data1 = JSON.parse(data)
+      console.log(data1);
+      console.log(data1.result[0].image);
+      const subject = data1.result[0].subject;
+      const question = data1.result[0].question;
+      const description = data1.result[0].description;
+      document.getElementById('UserName').innerHTML = subject;
+      document.getElementById('Question').innerHTML = question;
+      document.getElementById('Solution').innerHTML = description;
+      let base64string = "";
+      data1.result.map((singleData)=>{
+       base64string = btoa(String.fromCharCode(...new Uint8Array(singleData.image.data.data)))
+      })   
+      console.log(base64string);
+      document.getElementById('image1').src = "data:image/jpg;base64," + base64string;
+
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+      integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+      crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"></script>
+    <script src="bootstrap-5.2.2-dist/js/bootstrap.min.js">   </script>
+    <script src="MDB5-STANDARD-UI-KIT-Free-5.0.0/js/mdb.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript"
+      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+
 </html>
