@@ -27,8 +27,8 @@
       <div class="col-md-3">
         <div class="card">
           <div class="card-body">
-            <div class="h5" id="UserName">@</div>
-            <div class="h7 text-muted" id="FullName">Fullname : Miracles Lee Cross</div>
+            <div class="h5" id="Name"></div>
+            <div class="h7 text-muted" id="Name">Fullname : Miracles Lee Cross</div>
 
           </div>
           <ul class="list-group list-group-flush">
@@ -148,7 +148,42 @@
             <a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Share</a>
           </div>
         </div>
+        
+        <div class="card gedf-card">
+          <div class="card-header">
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="d-flex justify-content-between align-items-center">
+                
+                <div class="ml-2">
+                  <div class="h5 m-0" id="UserName1"></div>
+                  <div class="h7 text-muted" id="UserName1">Miracles Lee Cross</div>
 
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="card-body">
+            <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o" id="Time"></i>10 min ago</div>
+            <a class="card-link" href="#">
+              <h5 class="card-title" id="Question1">Lorem ipsum dolor sit amet, consectetur adip.</h5>
+            </a>
+
+            <p class="card-text" id="Solution1">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo recusandae nulla rem eos ipsa praesentium
+              esse magnam nemo dolor
+              sequi fuga quia quaerat cum, obcaecati hic, molestias minima iste voluptates.
+            </p>
+            <img class="img-fluid rounded mb-3" alt="farmex.jpg" id="image1" />
+          
+          </div>
+          <div class="card-footer">
+            <a href="#" class="card-link"><i class="fa fa-gittip"></i> Upvote</a>
+            <a href="#" class="card-link"><i class="fa fa-comment"></i> Downvote</a>
+            <a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Share</a>
+          </div>
+        </div>
          <div class="card gedf-card">
           <div class="card-header">
             <div class="d-flex justify-content-between align-items-center">
@@ -260,6 +295,42 @@
           </div>
         </div>
 
+        <div class="card gedf-card">
+          <div class="card-header">
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="d-flex justify-content-between align-items-center">
+                
+                <div class="ml-2">
+                  <div class="h5 m-0" id="UserName1"></div>
+                  <div class="h7 text-muted" id="UserName">Miracles Lee Cross</div>
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="card-body">
+            <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o" id="Time"></i>10 min ago</div>
+            <a class="card-link" href="#">
+              <h5 class="card-title" id="Question1">Lorem ipsum dolor sit amet, consectetur adip.</h5>
+            </a>
+
+            <p class="card-text" id="Solution1">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo recusandae nulla rem eos ipsa praesentium
+              esse magnam nemo dolor
+              sequi fuga quia quaerat cum, obcaecati hic, molestias minima iste voluptates.
+            </p>
+            <img class="img-fluid rounded mb-3" alt="farmex.jpg" id="image1" />
+          
+          </div>
+          <div class="card-footer">
+            <a href="#" class="card-link"><i class="fa fa-gittip"></i> Upvote</a>
+            <a href="#" class="card-link"><i class="fa fa-comment"></i> Downvote</a>
+            <a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Share</a>
+          </div>
+        </div>
+
       </div>
     </div>
     </div>
@@ -273,6 +344,7 @@
             window.localStorage.setItem('data1', Data1);
           }
         })
+      
       const DATA = window.localStorage.getItem('data1');
       const DATA1 = JSON.parse(DATA);
       console.log(DATA1);

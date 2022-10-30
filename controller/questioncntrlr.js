@@ -1,5 +1,5 @@
 const User = require("../models/queries");
-
+const alert = require("alert");
 const multer = require("multer");
 const { Db } = require("mongodb");
 
@@ -24,7 +24,7 @@ PostQueries = async function (req, res) {
     } else {
       await User.create(
         {
-          username: req.body.username,
+          username: req.body.subject,
           question: req.body.question,
           description: req.body.description,
           image: {
@@ -38,6 +38,7 @@ PostQueries = async function (req, res) {
             res.json({ status: "error", message: err });
           } else {
             res.json({ status: "ok", message: item });
+            alert("Question Posted Successfully");
           }
         }
       );
