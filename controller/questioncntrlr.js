@@ -1,7 +1,8 @@
 const User = require("../models/queries");
 const alert = require("alert");
 const multer = require("multer");
-const { Db } = require("mongodb");
+const fs = require('fs');
+const path = require('path');
 
 const Storage = multer.diskStorage({
   destination: "Uploads",
@@ -16,19 +17,20 @@ const upload = multer({
 
 PostQueries = async function (req, res) {
   console.log("posted successfully");
-
+  
   upload(req, res, async (err) => {
     if (err) {
       console.log(err);
       res.json({ status: "error", message: err });
     } else {
+      
       await User.create(
         {
           username: req.body.subject,
           question: req.body.question,
           description: req.body.description,
           image: {
-            data: req.file.filename,
+            data: fs.readFileSync(req.file.path),
             contentType: "image/jpg",
           },
         },
