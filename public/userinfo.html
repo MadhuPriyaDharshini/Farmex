@@ -3,30 +3,110 @@
 
 <head>
   <title>Welcome user</title>
+  <meta charset="utf-8">
+  <meta charset="viewport" content=" width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="bootstrap-5.2.2-dist/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="bootstrap-5.2.2-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="userinfo.css">
 
 
 </head>
 
 <body>
-  <div class="container">
-    <div class="popup">
-      <div class="popup-content">
-       
-  <h2 class ="popup-title"> Welcome </h2>
-  <h2 id="H1tag" class="popup-title"></h2>
-  <!--<div id="google_translate_element"></div>
 
- 
-     <button class="btn btn-primary" type="submit" id="postqueriesbutton" onclick=postqueriesbutton()>Post Your Queries</button>
+  <!--Hey! This is the original version
+of Simple CSS Waves-->
+
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="farmer_frd.jpeg" alt="Logo" style="width:40px;" class="rounded-pill">
+      </a>
+      <div className="bn40div">
+        <a class="bn40" href="/">FARMEX</a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <li class="nav-item ">
+          <a href="/" class="nav-link text-white px-1 py-1 navbar-bold-markup" alt="Link to Welcome to the Zoo Page"
+            title="Link to Welcome to the Zoo Page" aria-label="Link to Welcome to the Zoo Page"></a></a>
+
+        </li>
+        <li class="nav-item">
+          <a href="/"><button class="bn-32 bn32">Feedback</button></a>
+        </li>
+        <li class="nav-item">
+        <li>
+          <a href="Help.html"><button class="bn-32 bn32">Help</button></a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <div id="google_translate_element"></div>
+      </form>
+    </div>
+    </div>
+
+  </nav>
+
+
+  <div class="header">
+
+    <!--Content before waves-->
+    <div class="inner-header flex">
+
+      <br><br>
+
+      <div class="container">
+        <div class="popup">
+          <div class="popup-content">
+
+            <h2 class="popup-title"> Welcome </h2>
+            <h2 id="H1tag" class="popup-title"></h2>
+
+
+
+            <!--<button class="btn btn-primary" type="submit" id="postqueriesbutton" onclick=postqueriesbutton()>Post Your Queries</button>
      <button class="btn btn-primary" type="submit" id="viewqueriesbutton" onclick=viewqueriesbutton()>View Queries</button> -->
-    <a href="postquery.html" class="popup-button">POST YOUR QUERIES</a>
-    <br><br>
-    <a href="viewquery.html" class="popup-button">VIEW YOUR QUERIES</a>
-  </div>  
-</div>  
-</div>
- 
+            <a href="postquery.html" class="popup-button">POST YOUR QUERIES</a>
+            <!--<br><br>
+    <a href="#" class="popup-button">VIEW YOUR QUERIES</a>-->
+            <br><br>
+            <a href="viewquery.html" class="popup-button">FARMER'S FEED</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Waves Container-->
+    <div>
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+          <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+          <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+          <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+        </g>
+      </svg>
+    </div>
+    <!--Waves end-->
+
+  </div>
+  <!--Header ends-->
+
+  <!--Content starts-->
+  <div class="content flex">
+    <p> FARMEX </p>
+  </div>
+
   <script>
     // function postqueriesbutton() {
     //   window.location.href = "youtube.com";
@@ -58,11 +138,19 @@
   </script>
   <script type="text/javascript">
     function googleTranslateElementInit() {
-      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
     }
-    </script>
-    
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  </script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="bootstrap-5.2.2-dist/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 

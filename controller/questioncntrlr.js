@@ -62,4 +62,12 @@ ViweQueries = (req,res)=>{
   })
 }
 
-module.exports = { PostQueries , ViweQueries};
+UpdateAnswers = (req,res)=>{
+  const id = req.body;
+  const answer = req.body;
+  console.log(id);
+  console.log(answer);
+  res.json({status : "ok", message:"done"});
+}
+
+module.exports = { PostQueries , ViweQueries ,UpdateAnswers};

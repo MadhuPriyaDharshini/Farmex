@@ -8,113 +8,158 @@
   <link rel="stylesheet" href="bootstrap-5.2.2-dist/css/bootstrap.min.css" id="bootstrap-css">
   <link rel="stylesheet" href="MDB5-STANDARD-UI-KIT-Free-5.0.0/css/mdb.min.css">
   <link rel="stylesheet" href="feed.css">
-
-
-
 </head>
 
 <body>
-  <nav class="navbar navbar-light bg-white">
-    <a href="#" class="navbar-brand">FARMEX</a>
-    <form class="form-inline">
-      <div class="input-group">
+
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="farmer_frd.jpeg" alt="Logo" style="width:40px;" class="rounded-pill">
+      </a>
+      <div className="bn40div">
+        <a class="bn40" href="/">FARMEX</a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <li class="nav-item ">
+          <a href="/" class="nav-link text-white px-1 py-1 navbar-bold-markup" alt="Link to Welcome to the Zoo Page"
+            title="Link to Welcome to the Zoo Page" aria-label="Link to Welcome to the Zoo Page"></a></a>
+
+        </li>
+        <li class="nav-item">
+          <a href="/"><button class="bn-32 bn32">Feedback</button></a>
+        </li>
+        <li class="nav-item">
+        <li>
+          <a href="Help.html"><button class="bn-32 bn32">Help</button></a>
+        </li>
+      </ul>
+      <form class="d-flex">
         <div id="google_translate_element"></div>
-      </div>
-    </form>
+      </form>
+    </div>
+    </div>
+
   </nav>
-  <div class="container-fluid gedf-wrapper">
-    <div class="row">
-      <div class="col-md-3">
-        <div class="card">
-          <div class="card-body">
-            <div class="h5" id="Name"></div>
-            <div class="h7 text-muted" id="Name">Fullname : Miracles Lee Cross</div>
+  <div class="header">
 
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-              <div class="h6 text-muted">Total Queries Posted</div>
-              <div class="h5" id="NumOfQueries">5.2342</div>
-            </li>
-            <li class="list-group-item">
-              <div class="h6 text-muted"></div>
-              <div class="h5"></div>
-            </li>
-            <li class="list-group-item">Designation</li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-md-6 gedf-main" id="Row1">
 
-        <!--- \\\\\\\Post-->
-        <div class="card gedf-card">
-          <div class="card-header">
-            <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
-              <li class="nav-item">
-                <a class="nav-link active" id="posts-tab" data-toggle="tab" href="viewquery.html" role="tab"
-                  aria-controls="posts" aria-selected="true">
-                  Posted Queries</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" id="images-tab" data-toggle="tab" role="tab" aria-controls="images"
-                  aria-selected="false" href="#images">Feed</a>
-              </li>
-            </ul>
+    <div class="inner-header flex">
+
+      <div class="container-fluid gedf-wrapper">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="card">
+              <div class="card-body">
+                <div class="h5" id="name"></div>
+                <div class="h7 text-muted" id="name1">Fullname : Miracles Lee Cross</div>
+
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <div class="h6 text-muted">Farmer's feed</div>
+                  <div class="h5" id="NumOfQueries"></div>
+                </li>
+                <li class="list-group-item">
+                  <div class="h6 text-muted"></div>
+                  <div class="h5"></div>
+                </li>
+                <li class="list-group-item">Designation</li>
+              </ul>
+            </div>
           </div>
-          <div class="card-body">
-            <div class="tab-content" id="myTabContent">
-              <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
-                <div class="popup">
-                  <label class="sr-only" for="message"></label>
-                  <a href="postquery.html" class="popup-button">POST YOUR Suggestion</a>
-                  <br><br>
+          <div class="col-md-6 gedf-main" id="Row1">
+
+            <!--- \\\\\\\Post-->
+            <div class="card gedf-card">
+              <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="posts-tab" data-toggle="tab" href="viewquery.html" role="tab"
+                      aria-controls="posts" aria-selected="true">
+                      Posted Queries</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="images-tab" data-toggle="tab" role="tab" aria-controls="images"
+                      aria-selected="false" href="#images"></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-body">
+                <div class="tab-content" id="myTabContent">
+                  <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
+                    <div class="popup">
+                      <label class="sr-only" for="message"></label>
+                      <a href="postquery.html" class="popup-button">POST YOUR Suggestion</a>
+                      <br><br>
+                    </div>
+
+                  </div>
+
                 </div>
 
               </div>
-
             </div>
 
-          </div>
-        </div>
+            <div class="card gedf-card" id="FeedCard">
+              <div class="card-header">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="d-flex justify-content-between align-items-center">
 
+                    <div class="ml-2">
+                      <div class="h5 m-0" id="UserName0"></div>
+                      <div class="h7 text-muted" id="FullName0">Miracles Lee Cross</div>
 
-
-        <div class="card gedf-card" id="FeedCard">
-          <div class="card-header">
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="d-flex justify-content-between align-items-center">
-
-                <div class="ml-2">
-                  <div class="h5 m-0" id="UserName0"></div>
-                  <div class="h7 text-muted" id="FirstName"></div>
+                    </div>
+                  </div>
 
                 </div>
-              </div>
 
+              </div>
+              <div class="card-body">
+                <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o" id="Time"></i></div>
+                <a class="card-link" href="#">
+                  <h5 class="card-title" id="Question0">Lorem ipsum dolor sit amet, consectetur adip.</h5>
+                </a>
+
+                <p class="card-text" id="Solution0">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo recusandae nulla rem eos ipsa praesentium
+                  esse magnam nemo dolor
+                  sequi fuga quia quaerat cum, obcaecati hic, molestias minima iste voluptates.
+                </p>
+
+                <img class="img-fluid rounded mb-3" alt="farmex.jpg" id="image0" style="text-align: center;" />
+
+              </div>
+              <div class="card-footer">
+                <a href="#" class="card-link"><i class="fa fa-gittip"></i> Upvote</a>
+                <a href="#" class="card-link"><i class="fa fa-comment"></i> Downvote</a>
+                <a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Comment </a>
+              </div>
+              <div class="card-footer">
+
+                <form id="answers0">
+                  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="Type your answer here" name="Answers">
+                  <br>
+                  <div class="sm-3">
+                    <input type="submit" class="btn btn-primary btn-block mb-4"></input>
+                  </div>
+                </form>
+              </div>
             </div>
 
-          </div>
-          <div class="card-body">
-            <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o" id="Time"></i>10 min ago</div>
-            <a class="card-link" href="#">
-              <h5 class="card-title" id="Question0">Lorem ipsum dolor sit amet, consectetur adip.</h5>
-            </a>
 
-            <p class="card-text" id="Solution0">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo recusandae nulla rem eos ipsa praesentium
-              esse magnam nemo dolor
-              sequi fuga quia quaerat cum, obcaecati hic, molestias minima iste voluptates.
-            </p>
-            <img class="img-fluid rounded mb-3" alt="farmex.jpg" id="image0" />
 
-          </div>
-          <div class="card-footer">
-            <a href="#" class="card-link"><i class="fa fa-gittip"></i> Upvote</a>
-            <a href="#" class="card-link"><i class="fa fa-comment"></i> Downvote</a>
-            <a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Share</a>
+
           </div>
         </div>
-
       </div>
     </div>
   </div>
@@ -144,20 +189,31 @@
       console.log(cloneChilds);
       const a = j + 1
       cloneChilds[1].childNodes[1].childNodes[1].childNodes[1].childNodes[1].id = "UserName" + a;
+      cloneChilds[1].childNodes[1].childNodes[1].childNodes[1].childNodes[3].id = "FullName" + a;
       cloneChilds[3].childNodes[3].childNodes[1].id = "Question" + a;
       cloneChilds[3].childNodes[5].id = "Solution" + a;
       cloneChilds[3].childNodes[7].id = "image" + a;
+      cloneChilds[7].childNodes[1].id = "answers" + a;
 
     }
 
     for (let j = 0; j < DATA1.length; j++) {
       image1[j] = btoa(String.fromCharCode(...new Uint8Array(DATA1[j].image.data.data)));
       document.getElementById('UserName' + j).innerHTML = DATA1[j].username;
+      document.getElementById('FullName' + j).innerHTML = DATA1[j].username;
       document.getElementById('Question' + j).innerHTML = DATA1[j].question;
       document.getElementById('Solution' + j).innerHTML = DATA1[j].description;
       document.getElementById('image' + j).src = "data:image/jpg;base64," + image1[j];
     }
+
+    
+
+    const name = window.localStorage.getItem('data');
+    document.getElementById('name').innerHTML = name;
+    const name1 = window.localStorage.getItem('data');
+    document.getElementById('name1').innerHTML = name1;
   </script>
+
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
