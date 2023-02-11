@@ -24,7 +24,7 @@ createUser = async function (req, res) {
  
   try {
     const oldUser = await User.findOne({ Email });
-    console.log(oldUser);
+    //console.log(oldUser);
     if (oldUser) {
       return res.json({ error: "User exists" });
     }
@@ -45,7 +45,7 @@ validateUser = async function (req, res) {
   const { Email, password } = req.body;
   
   const user = await User.findOne({ Email });
-  console.log(user);
+  //console.log(user);
   const username = user.UserName;
   if (!user) {
     alert("User not found please sign up");
@@ -70,14 +70,14 @@ validateUser = async function (req, res) {
 
 userInfo = async (req, res) => {
   const {token} =  req.body;
-  console.log(req.body);
+  //console.log(req.body);
   try{
     const user =  jwt.verify(token,JWT_SECRET);
-    console.log(user);
+    //console.log(user);
     const username = user.username;
-    console.log(username);
+    //console.log(username);
     await User.findOne({UserName : username}).then((data)=>{
-      console.log(data);
+      //console.log(data);
       res.json({status:"ok",data:data})
     }).catch((error)=>{
       res.json({status : error , data : error});
