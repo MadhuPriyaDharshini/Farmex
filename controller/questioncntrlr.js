@@ -56,7 +56,6 @@ ViweQueries = (req,res)=>{
      res.send({status : err});
     }
     else{
-      console.log(result)
       res.send(result);
     }
   })
