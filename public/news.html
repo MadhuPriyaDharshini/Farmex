@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>News</title>
+</head>
+
+<body>
+    <h1>HariMuthu</h1>
+    <div id="NewsFeed">
+        <h3 id="title0"></h3>
+        <p id="content0"></p>
+    </div>
+    <script defer>
+
+        apikey = '038618d753d6b8b5555c59035d9d635a';
+        url = 'https://gnews.io/api/v4/search?q=agriculture&lang=en&country=in&max=10&apikey=' + apikey;
+        //url = 'https://newsapi.org/v2/everything?q=farmer%20india&apiKey=f859afd62364408099d6fa60843175e9'
+        fetch(url)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                const Data2 = JSON.stringify(data);
+                //console.log(data);
+                if (data) {
+                    window.localStorage.setItem('data1', Data2);
+                }
+            });
+
+        const DATA = window.localStorage.getItem('data1');
+        const DATA1 = JSON.parse(DATA);
+        console.log(DATA1);
+
+        for (let j = 0; j < 11; j++) {
+            const parentDiv = document.getElementById('NewsFeed');
+            const cloneOfParentDiv = parentDiv.cloneNode(true);
+            const UpdatedIdofParentDiv = "NewsFeed" + j;
+            cloneOfParentDiv.id = UpdatedIdofParentDiv;
+            parentDiv.parentNode.appendChild(cloneOfParentDiv);
+            const cloneChilds = document.getElementById(UpdatedIdofParentDiv).childNodes;
+            let a = j+1;
+            cloneChilds[1].id = "title" + a;
+            cloneChilds[3].id = "content" + a;
+        }
+
+        for (let j = 0; j < 10; j++) {
+            //image1[j] = btoa(String.fromCharCode(...new Uint8Array(DATA1[j].image.data.data)));
+            document.getElementById('content' + j).innerHTML = DATA1[j].content;
+            document.getElementById('title' + j).innerHTML = DATA1[j].title;
+            
+            // document.getElementById('Question' + j).innerHTML = DATA1[j].question;
+            // document.getElementById('Solution' + j).innerHTML = DATA1[j].description;
+            // document.getElementById('image' + j).src = "data:image/jpg;base64," + image1[j];
+        }
+
+
+
+    </script>
+</body>
+
+</html>
