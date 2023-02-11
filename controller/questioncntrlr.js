@@ -49,7 +49,7 @@ PostQueries = async function (req, res) {
 };
 
 ViweQueries = (req,res)=>{
-  console.log("Inside ViewQueries");
+  //console.log("Inside ViewQueries");
   User.find({},function(err,result){
     if (err) {
      console.log(err);
