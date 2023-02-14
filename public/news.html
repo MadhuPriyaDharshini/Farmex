@@ -6,7 +6,6 @@
 </head>
 
 <body>
-    <h1>HariMuthu</h1>
     <div id="NewsFeed">
         <h3 id="title0"></h3>
         <p id="content0"></p>
@@ -46,9 +45,10 @@
 
         for (let j = 0; j < 10; j++) {
             //image1[j] = btoa(String.fromCharCode(...new Uint8Array(DATA1[j].image.data.data)));
-            document.getElementById('content' + j).innerHTML = DATA1[j].content;
-            document.getElementById('title' + j).innerHTML = DATA1[j].title;
-            
+            document.getElementById('content' + j).innerHTML = DATA1.articles[j].content;
+            document.getElementById('title' + j).innerHTML =DATA1.articles[j].title;
+            // console.log(DATA1.articles[j].content);
+            // console.log(DATA1.articles[j].title);
             // document.getElementById('Question' + j).innerHTML = DATA1[j].question;
             // document.getElementById('Solution' + j).innerHTML = DATA1[j].description;
             // document.getElementById('image' + j).src = "data:image/jpg;base64," + image1[j];
