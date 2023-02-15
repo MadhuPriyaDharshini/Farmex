@@ -1,0 +1,103 @@
+body{
+    
+    background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
+    background-repeat: no-repeat;
+    height: 100%;
+    background-size: cover;
+
+}
+
+
+ul.nav-bar{
+    text-decoration: none;
+  }
+  nav{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    position:fixed;
+    top:0;
+    width:100%;
+    overflow: auto;
+    height:50px;
+  
+  }
+  
+  .nav-bar{
+    list-style: none;
+    display: flex;
+    color:#61DAFB;
+    flex:1 1 200px;
+    /*float:right;*/
+  }
+  
+  a.nav-links{
+    display:inline-block;
+    text-align:center;
+    padding:14px;
+    color:white;
+    text-decoration: none;
+    font-size:17px;
+    font-weight: bolder;
+  }
+  
+  
+  nav ul li a:hover{
+    background-color: #444444;
+    border-bottom: 2px solid #61DAFB;;
+  }
+  
+  .nav-bar > li.nav-items{
+    padding: 10px;
+  }
+  h3.nav_h3{
+    margin-right:auto;
+    font-weight:700;
+    font-size:22px;
+    color:#61DAFB;
+  }
+  
+  nav >h3, nav>h4{
+    margin:0;
+  }
+.container.signin-container{
+margin-top:8%;
+
+
+/*container has its own height by fixing margin-top it will grab the contents down at the middle*/
+}
+.card.signin-card{
+padding:40px 0px 20px ;
+background-color: #f4f4f4;
+box-shadow:-2px -2px 5px rgba(0,0,0,0.5);
+box-shadow:  -2px -2px 5px rgba(0,0,0,0.5);
+
+
+}
+.img-fluid.signin-image{
+padding:0 2rem 2rem;
+margin:auto;
+display:block;
+
+}
+form.signin-form{
+max-width:350px;
+margin:auto;
+
+}
+
+h1.fantasy{
+
+margin:auto;
+display:block;
+position:center;
+outline-width: thick;
+font-family: sans;
+
+}
+p , a.create-new-account{
+font-size: 1.2rem;
+text-align: center;
+display: block;
+margin-top: 15px;
+}

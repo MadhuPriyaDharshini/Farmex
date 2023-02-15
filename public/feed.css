@@ -2,6 +2,59 @@ body {
     background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
 } 
 
+ul.nav-bar{
+  text-decoration: none;
+}
+nav{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  position:fixed;
+  top:0;
+  width:100%;
+  overflow: auto;
+  height:50px;
+
+}
+
+.nav-bar{
+  list-style: none;
+  display: flex;
+  color:#61DAFB;
+  flex:1 1 200px;
+  /*float:right;*/
+}
+
+a.nav-links{
+  display:inline-block;
+  text-align:center;
+  padding:14px;
+  color:white;
+  text-decoration: none;
+  font-size:17px;
+  font-weight: bolder;
+}
+
+
+nav ul li a:hover{
+  background-color: #444444;
+  border-bottom: 2px solid #61DAFB;;
+}
+
+.nav-bar > li.nav-items{
+  padding: 10px;
+}
+h3.nav_h3{
+  margin-right:auto;
+  font-weight:700;
+  font-size:22px;
+  color:#61DAFB;
+}
+
+nav >h3, nav>h4{
+  margin:0;
+}
+
 .h7 {
     font-size: 0.8rem;
 }
