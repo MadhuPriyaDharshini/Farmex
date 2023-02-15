@@ -7,6 +7,7 @@
 
 <body>
     <div id="NewsFeed">
+        <img id="image0" style="width: 200px; height: 200px; border-radius: 10px; border: solid 2px grey;" alt="Image"/>
         <h3 id="title0"></h3>
         <p id="content0"></p>
     </div>
@@ -31,27 +32,25 @@
         const DATA1 = JSON.parse(DATA);
         console.log(DATA1);
 
-        for (let j = 0; j < 11; j++) {
+        for (let j = 0; j < 9; j++) {
             const parentDiv = document.getElementById('NewsFeed');
             const cloneOfParentDiv = parentDiv.cloneNode(true);
             const UpdatedIdofParentDiv = "NewsFeed" + j;
             cloneOfParentDiv.id = UpdatedIdofParentDiv;
             parentDiv.parentNode.appendChild(cloneOfParentDiv);
             const cloneChilds = document.getElementById(UpdatedIdofParentDiv).childNodes;
+            //console.log(cloneChilds);
             let a = j+1;
-            cloneChilds[1].id = "title" + a;
-            cloneChilds[3].id = "content" + a;
+            cloneChilds[1].id = "image" + a;  
+            cloneChilds[3].id = "title" + a;
+            cloneChilds[5].id = "content" + a;
         }
 
         for (let j = 0; j < 10; j++) {
             //image1[j] = btoa(String.fromCharCode(...new Uint8Array(DATA1[j].image.data.data)));
             document.getElementById('content' + j).innerHTML = DATA1.articles[j].content;
             document.getElementById('title' + j).innerHTML =DATA1.articles[j].title;
-            // console.log(DATA1.articles[j].content);
-            // console.log(DATA1.articles[j].title);
-            // document.getElementById('Question' + j).innerHTML = DATA1[j].question;
-            // document.getElementById('Solution' + j).innerHTML = DATA1[j].description;
-            // document.getElementById('image' + j).src = "data:image/jpg;base64," + image1[j];
+            document.getElementById('image' + j).src = DATA1.articles[j].image;
         }
 
 
